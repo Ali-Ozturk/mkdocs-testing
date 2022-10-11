@@ -1,0 +1,38 @@
+site_name: Documentation Tooling
+nav:
+  - Home: index.md
+  - Authentication: AuthenticationService/frontpage.md
+  - Customer: CustomerService/frontpage.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - navigation.instant
+    - header.autohide
+  language: en
+
+markdown_extensions:
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- admonition
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.mark
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - global_styling.css
+
+plugins:
+  - search
