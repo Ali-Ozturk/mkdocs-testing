@@ -1,0 +1,147 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+{{ super() }}
+
+<!-- Additional styles for landing page -->
+<style>
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    /* Application header should be static for the landing page */
+    .md-header {
+        position: initial;
+    }
+
+    /* Remove spacing, as we cannot hide it completely */
+    .md-main__inner {
+        margin: 0;
+    }
+
+    /* Hide main content for now */
+    .md-content {
+        display: none;
+    }
+
+    /* Hide table of contents */
+    @media screen and (min-width: 60em) {
+        .md-sidebar--secondary {
+            display: none;
+        }
+    }
+
+    /* Hide navigation */
+    @media screen and (min-width: 76.25em) {
+        .md-sidebar--primary {
+            display: none;
+        }
+    }
+
+
+    #frontpage {
+        color: white;
+    }
+
+    #frontpage .col, .col-4 {
+        background-color: navy !important;
+        min-height: 5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #frontpage .col:hover, .col-4:hover {
+        background-color: red !important;
+        cursor: pointer;
+    }
+
+    .h-100 {
+        height: 100% !important;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .overview > div {
+        background-color: navy !important;
+        min-height: 5rem;
+    }
+</style>
+
+<p>Test</p>
+
+{% for nav_item in nav %}
+{% set title = title | d(nav_item.title) %}
+<li class="md-tabs__item">
+    <a href="{{ nav_item.url | url }}" class="{{ class }}">
+        {{ title }}
+    </a>
+</li>
+{% endfor %}
+
+<!-- Hero for landing page -->
+<section class="md-grid md-typeset h-100 d-flex">
+    <div id="frontpage" class="d-flex align-items-center justify-content-center">
+
+        <div class="overview grid grid-cols-3 gap-4">
+            <div>01</div>
+            <div>01</div>
+            <div>01</div>
+            <div>01</div>
+            <div>01</div>
+            <div>01</div>
+            <div>01</div>
+            <div class="col-span-3">09</div>
+        </div>
+
+
+
+
+        <!--
+         <div class="container">
+            <div class="row py-1">
+                <div class="col-4 text-center d-flex justify-content-center align-items-center">
+
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col text-center d-flex justify-content-center align-items-center">
+
+                </div>
+            </div>
+        </div>
+         -->
+    </div>
+</section>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}{% endblock %}

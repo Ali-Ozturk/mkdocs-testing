@@ -1,11 +1,12 @@
 site_name: Documentation Tooling
 nav:
-  - Home: index.md
-  - Authentication: AuthenticationService/frontpage.md
-  - Customer: CustomerService/frontpage.md
+  - Home: 'index.md'
+  - Authentication: 'AuthenticationService/frontpage.md'
+  - Customer: 'CustomerService/frontpage.md'
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.tabs
     - navigation.expand
